@@ -15,8 +15,11 @@
                             @csrf
 
                             <div class="form-group mb-3">
+                                <div class="preview">
+                                    <img id="create-preview-image" src="" alt="Old Image" width="100">
+                                </div>
                                 <label class="font-weight-bold">IMAGE</label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                                <input id="image-input" type="file" class="form-control @error('image') is-invalid @enderror" name="image">
                             
                                 <!-- error message untuk image -->
                                 @error('image')

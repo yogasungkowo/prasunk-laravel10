@@ -107,6 +107,8 @@ input {
     margin-top: 40px;
     transition: 0.3s;
     margin-bottom: 40px;
+    height: 600px;
+    width: auto;
 }
 
 .card_box:hover {
@@ -157,13 +159,13 @@ input {
 }
 
 .container-img {
-    width: 359px;
-    max-width: 359px;
+    width: 350px !important;
+    max-width: 365px;
 }
 
 .container-img img {
-    max-height: 350px;
-    max-width: 100%;
+    max-height: 1000px;
+    max-width: 1000px;
     width: auto;
     height: auto;
     display: block;
@@ -175,6 +177,8 @@ input {
 }
 
 #contact {
+    font-family: 'Ubuntu Sans', sans-serif !important;
+    font-style: normal !important;
     margin-top: 200px;
     margin-bottom: 200px;
 }
@@ -441,20 +445,6 @@ textarea:focus ~ .highlight {
         max-width: 1000;
         height: auto;
         border-radius: 20px;
-    }
-
-    .container-img {
-        width: 359px;
-        max-width: 450px;
-    }
-    
-    .container-img img {
-        max-height: 350px;
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        display: block;
-        object-fit: cover;
     }
 
     #contact container {

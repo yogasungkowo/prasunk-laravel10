@@ -72,7 +72,7 @@ function slider_carouselInit() {
     $('.owl-carousel.slider_carousel').owlCarousel({
         dots: false,
         loop: true,
-        margin: 20,
+        margin: 30,
         stagePadding: 2,
         autoplay: true,
         nav: true,
