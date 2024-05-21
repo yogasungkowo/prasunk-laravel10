@@ -95,7 +95,7 @@
                     </ol>
                     </p>
                     <h3 class="fw-bold fs-4 pt-2" style="color: #8FFF00">$ ~ <a class="text-decoration-none"
-                            href="https://adinusa.id/course/publisher/show/a5413e28-5a30-4535-b698-f3bfd38d4fe3"
+                            href="https://drive.google.com/file/d/1F7LEL1Ak0e62h0PlVebK10BtmZwPpAzX/view"
                             target="_blank"><span class="tulisan-merah" style="color:#FF1E1E">See
                                 Credentials</span></a></h3>
                 </div>
@@ -117,7 +117,7 @@
                     </ol>
                     </p>
                     <h3 class="fw-bold fs-4 pt-2" style="color: #8FFF00">$ ~ <a class="text-decoration-none"
-                            href="https://adinusa.id/course/publisher/show/a5413e28-5a30-4535-b698-f3bfd38d4fe3"
+                            href="https://www.credly.com/badges/ada4e4c4-a03e-4ae2-aeba-5bcad856594e/public_url"
                             target="_blank"><span class="tulisan-merah" style="color:#FF1E1E">See
                                 Credentials</span></a></h3>
                 </div>

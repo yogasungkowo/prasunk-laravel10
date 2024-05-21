@@ -210,6 +210,7 @@
             <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
                 integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous">
             </script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script>
                 ClassicEditor
                     .create(document.querySelector('#editor'), {
@@ -247,6 +248,24 @@
                         reader.readAsDataURL(file);
                     }
                 });
+
+                @if (session('success'))
+                    Swal.fire({
+                        icon: "success",
+                        title: "BERHASIL",
+                        text: "{{ session('success') }}",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                @elseif (session('error'))
+                    Swal.fire({
+                        icon: "error",
+                        title: "GAGAL!",
+                        text: "{{ session('error') }}",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                @endif
             </script>
 </body>
 </body>

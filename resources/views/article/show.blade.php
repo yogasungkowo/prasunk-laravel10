@@ -16,7 +16,28 @@
                     {{ $post->created_at->diffForHumans() }} . </p>
                 </p>
                 <div class="mx-5">
-                    <p class="text-white ">{!! str_replace('<img', '<img style="width: 550px; height:auto; display: block; margin-left: auto; margin-right: auto; border-radius: 20px"', str_replace('<p', '<p style="color: #ffff; text-align: justify;"', $post->body)) !!}</p>
+                    <p class="text-white ">{!! str_replace(
+                        ['<p>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>', '<li>'],
+                        [
+                            '<p style="color: #ffff; text-align: justify;">',
+                            '<h1 style="color: #ffff;">',
+                            '<h2 style="color: #ffff;">',
+                            '<h3 style="color: #ffff;">',
+                            '<h4 style="color: #ffff;">',
+                            '<h5 style="color: #ffff;">',
+                            '<h6 style="color: #ffff;">',
+                            '<li style="color: #ffff;">',
+                        ],
+                        str_replace(
+                            ['<img', '<br', '<hr'],
+                            [
+                                '<img style="width: 550px; height:auto; display: block; margin-left: auto; margin-right: auto; border-radius: 20px"',
+                                '<br>',
+                                '<hr>',
+                            ],
+                            $post->body,
+                        ),
+                    ) !!}</p>
                 </div>
             </div>
         </div>
