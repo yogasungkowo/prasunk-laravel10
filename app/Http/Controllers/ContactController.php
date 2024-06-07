@@ -2,41 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
-    public function submit(Request $request)
+    public function sendContactForm(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'thoughts' => 'nullable|string',
+            'email' => 'required|email|max:255',
+            'thoughts' => 'required|string',
         ]);
 
-        // Ambil data dari form
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'thoughts' => $request->thoughts,
-        ];
-        
         try {
+            $contact = $validated;
+
             // Kirim email
-            Mail::to('prayogasungkowo12@gmail.com')->send(new ContactMail($data));
-            
-            // Redirect dengan pesan sukses
-            return redirect()->back()->with('success', 'Thank you for contacting us!');
+            Mail::to('prayogasungkowo1@gmail.com')->send(new ContactMail($contact));
+
+            // Set session flash data for success
+            return redirect()->back()->with('success', 'Email sent successfully!');
         } catch (\Exception $e) {
-            // Log error
-            Log::error('Email sending failed: ' . $e->getMessage());
+            Log::error('Error sending email: ' . $e->getMessage());
             
-            // Redirect dengan pesan error
-            return redirect()->back()->with('error', 'There was an error sending your message. Please try again later.');
+            // Set session flash data for failure
+            return redirect()->back()->with('error', 'Failed to send email. Please try again later.');
         }
     }
 }
-

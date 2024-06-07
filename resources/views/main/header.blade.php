@@ -81,21 +81,19 @@
                 img.style.width = '736px'; // Set lebar gambar
             });
         });
-        @if (session('success'))
+        @if(session('success'))
             Swal.fire({
-                icon: "success",
-                title: "BERHASIL",
-                text: "{{ session('success') }}",
-                showConfirmButton: false,
-                timer: 2000
+                icon: 'success',
+                title: 'Success',
+                text: '{{ session('success') }}',
             });
-        @elseif (session('error'))
+        @endif
+
+        @if(session('error'))
             Swal.fire({
-                icon: "error",
-                title: "GAGAL!",
-                text: "{{ session('error') }}",
-                showConfirmButton: false,
-                timer: 2000
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}',
             });
         @endif
     </script>
